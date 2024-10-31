@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized Swiper Slide</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        /* Wrapper Styling */
+        .wrapper {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Swiper Container Styling */
+        .swiper-container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px 0;
+        }
+
+        .txtbox {
+            line-height: 1.5;
+            font-size: 18px;
+            width: 269px;
+            padding: 20px;
+            background-color: #333333;
+        }
+
+        /* Card Styling */
+        .testimonial-card {
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        /* Testimonial Image */
+        .testimonial-image {
+            margin-top: 30px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonial Text */
+        .testimonial-text {
+            font-size: 1em;
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonial Author */
+        .testimonial-author {
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Swiper Pagination */
+        .swiper-pagination-bullet {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <img src="https://storage.googleapis.com/msgsndr/33nOgzt8j4gWwzvqpGwH/media/6720e4c7e8118662cd2af1f9.jpeg" alt="Testimonial 1" class="testimonial-image">
+                        <p class="testimonial-author">- John Doe</p>
+                        <div class="txtbox">
+                            <p class="testimonial-text">"“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
+                                fugit excepturi sapiente voluptatum nulla odio quaerat quibusdam tempore similique
+                                doloremque
+                                veritatis et cupiditate, maiores cumque repudiandae explicabo tempora deserunt
+                                consequuntur?”"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="txtbox">
+                            <p class="testimonial-text">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
+                                fugit excepturi sapiente voluptatum nulla odio quaerat quibusdam tempore similique doloremque
+                                veritatis et cupiditate, maiores cumque repudiandae explicabo tempora deserunt consequuntur?”</p>
+                        </div>
+                        <img src="https://storage.googleapis.com/msgsndr/33nOgzt8j4gWwzvqpGwH/media/6720e4c741ca2146fd7e58a4.jpeg" alt="Testimonial 2" class="testimonial-image">
+                        <p class="testimonial-author">- Sarah Lee</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <img src="https://storage.googleapis.com/msgsndr/33nOgzt8j4gWwzvqpGwH/media/6720e4c7430e6cfa3cf64c5e.jpeg" alt="Testimonial 3" class="testimonial-image">
+                        <p class="testimonial-author">- Alex Smith</p>
+                        <div class="txtbox">
+                            <p class="testimonial-text">"“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
+                                fugit excepturi sapiente voluptatum nulla odio quaerat quibusdam tempore similique
+                                doloremque
+                                veritatis et cupiditate, maiores cumque repudiandae explicabo tempora deserunt
+                                consequuntur?”"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="txtbox">
+                            <p class="testimonial-text">"“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
+                                fugit excepturi sapiente voluptatum nulla odio quaerat quibusdam tempore similique
+                                doloremque
+                                veritatis et cupiditate, maiores cumque repudiandae explicabo tempora deserunt
+                                consequuntur?”"
+                            </p>
+                        </div>
+                        <img src="https://storage.googleapis.com/msgsndr/33nOgzt8j4gWwzvqpGwH/media/6720e4c7e8118662cd2af1f9.jpeg" alt="Testimonial 4" class="testimonial-image">
+                        <p class="testimonial-author">- Jane Doe</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Swiper Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            spaceBetween: 60,  // 60px gap between slides
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,  // 1 card for 320px
+                },
+                375: {
+                    slidesPerView: 1,  // 1 card for 375px
+                },
+                425: {
+                    slidesPerView: 1,  // 1 card for 425px
+                },
+                1440: {
+                    slidesPerView: 3,  // 3 cards for 1440px
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>
+
